@@ -1,5 +1,6 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
 import styled from "styled-components";
+import { ThemeContext } from "../../theme-context/theme-context";
 
 async function pokemonList() {
     const response = await fetch('https://pokeapi.co/api/v2/pokemon?limit=10&offset=0')
@@ -19,8 +20,10 @@ export const ListCards = () => {
         fetchData()
     },[])
 
+    const { theme } = useContext(ThemeContext)
+
     return(
-        <Main>
+        <Main style={{color: theme.color, backgroundColor: theme.backgroundColor}}>
             <ul>
                 {
                     list.map((item, index) => {
