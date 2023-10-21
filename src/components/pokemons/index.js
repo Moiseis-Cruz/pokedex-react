@@ -3,7 +3,7 @@ import styled from "styled-components";
 import { ThemeContext } from "../../theme-context/theme-context";
 
 async function pokemonList() {
-    const response = await fetch('https://pokeapi.co/api/v2/pokemon?limit=10&offset=0')
+    const response = await fetch('https://pokeapi.co/api/v2/pokemon?limit=10')
     return await response.json()
 }
 
@@ -30,7 +30,7 @@ export const ListCards = () => {
                         console.log(list);
                         return(
                             <div key={index}>
-                                <img src={item} alt={item.name} />
+                                <img src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/${index+1}.png`} alt={item.name} />
                                 <h2>{item.name}</h2>
                             </div>
                         )
@@ -47,7 +47,6 @@ const Main = styled.main`
     background-color: pink;
     margin: auto;
 `
-
 
 /* 
 .
