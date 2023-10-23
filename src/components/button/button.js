@@ -11,6 +11,6 @@ export const Button = () => {
     }
 
     return(
-        <button style={{color: theme.color, backgroundColor: theme.backgroundColor, fontSize: "20px", padding: "10px 20px", border: theme.border, borderRadius: "8px"}} onClick={handleThemes}>Change Theme</button>
+        <button style={{color: theme.color, backgroundColor: theme.backgroundColor, fontSize: "20px", padding: "10px 20px", border: theme.border, borderRadius: "8px", cursor: "pointer"}} onClick={handleThemes}>Change Theme</button>
     )
 }
