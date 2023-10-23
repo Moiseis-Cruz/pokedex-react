@@ -4,7 +4,8 @@ import { ThemeContext } from "../../theme-context/theme-context";
 
 async function pokemonList() {
     const response = await fetch('https://pokeapi.co/api/v2/pokemon?limit=10')
-    return await response.json()
+    const pokemons = await response.json()
+    return pokemons.results
 }
 
 export const ListCards = () => {
@@ -12,9 +13,9 @@ export const ListCards = () => {
 
     useEffect(()=>{
         async function fetchData() {
-            const deck = await pokemonList()
+            const pokeId = await pokemonList()
             
-            setList(deck.results)
+            setList(pokeId)
         }
         
         fetchData()
