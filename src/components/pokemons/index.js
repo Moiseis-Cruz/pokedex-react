@@ -28,10 +28,9 @@ export const ListCards = () => {
             <ul>
                 {
                     list.map((item, index) => {
-                        console.log(list);
                         return(
                             <div key={index}>
-                                <img src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/${index+1}.png`} alt={item.name} />
+                                <img src={item.url} alt={item.name} />
                                 <h2>{item.name}</h2>
                             </div>
                         )
@@ -68,4 +67,10 @@ list.data.map((item, index) => {
         </li>
         )
     })
+    */
+
+    /*
+
+    https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/${index+1}.png
+
     */
