@@ -179,30 +179,3 @@ const Main = styled.main`
     }
 
 `
-
-/* 
-.
-.name
-.moves[0].move.name
-.abilities[0].ability.name
-.abilities[1].ability.name
-.types[0].type.name
-*/
-
-/* 
-list.data.map((item, index) => {
-    return(
-        <li>
-        <div key={index}>
-        <h2>{item.moves[0].move.name}</h2>
-        </div>
-        </li>
-        )
-    })
-    */
-
-/*
-
-https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/${index+1}.png
-
-*/
