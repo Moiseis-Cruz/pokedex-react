@@ -132,6 +132,10 @@ const Main = styled.main`
     background-color: #FF1493; /* Rosa */
     }
 
+    .normal {
+        background-color: #A9A9A9; /* Cinza */
+    }
+
     /* Inseto */
     .bug {
     color: black;
