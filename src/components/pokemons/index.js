@@ -4,8 +4,7 @@ import { ThemeContext } from "../../theme-context/theme-context";
 import { usePokemonHook } from "../../hooks/usePokemonHook";
 
 export const ListCards = () => {
-    const { pokemonData } = usePokemonHook()
-    console.log(pokemonData)
+    const { pokemonData, setPage, page } = usePokemonHook()
     const { theme } = useContext(ThemeContext)
 
     return (
@@ -26,15 +25,39 @@ export const ListCards = () => {
                     })
                 }
             </ul>
+
+            <Pagination>
+                {page >= 1 && <button onClick={() => setPage(page - 20)}>ANTERIOR</button>}
+                <button onClick={() => setPage(page + 20)}>PROX</button>
+            </Pagination>
+
         </Main>
     )
 }
 
+const Pagination = styled.div`
+    display: flex;
+    flex-direction: row;
+    gap: 15px;
+    margin: 0 auto;
+    justify-content: center;
+
+    button {
+        background-color: antiquewhite;
+        color: black;
+        border: none;
+        border-radius: 5px;
+        padding: 10px 20px;
+        font-weight: bold;
+    }
+`
 const Main = styled.main`
     max-width: 1440px;
     width: 100%;
     background-color: pink;
     margin: auto;
+    padding-bottom: 30px;
+    
 
     
     .types {
@@ -63,7 +86,7 @@ const Main = styled.main`
         justify-content: space-between;
     }
 
-    div {
+    ul > div {
         padding: 20px;
         width: 200px;
         display: flex;
