@@ -2,9 +2,10 @@ import { useEffect, useState } from "react";
 
 export const usePokemonHook = () => {
     const [pokemonData, setpokemonData] = useState([]);
+    const [page, setPage] = useState(0);
 
     const fetchPokemonList = async () => {
-        const response = await fetch('https://pokeapi.co/api/v2/pokemon');
+        const response = await fetch(`https://pokeapi.co/api/v2/pokemon/?limit=20&offset=${page}`);
         const data = await response.json();
         return data.results;
     };
@@ -19,7 +20,7 @@ export const usePokemonHook = () => {
         try {
             // Primeira requisição
             const pokemonList = await fetchPokemonList();
-            
+
             const pokemonDataPromises = pokemonList.map((pokemon) =>
                 fetchPokemon(pokemon.url)
             );
@@ -34,9 +35,10 @@ export const usePokemonHook = () => {
 
     useEffect(() => {
         fetchPokemonData();
-    }, []);
+        console.log(page)
+    }, [page]);
 
     return {
-        pokemonData
+        pokemonData, setPage, page
     }
 }
