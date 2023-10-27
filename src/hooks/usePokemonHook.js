@@ -26,6 +26,7 @@ export const usePokemonHook = () => {
             );
 
             const pokemonData = await Promise.all(pokemonDataPromises);
+            console.log(pokemonData);
 
             setpokemonData(pokemonData);
         } catch (error) {
