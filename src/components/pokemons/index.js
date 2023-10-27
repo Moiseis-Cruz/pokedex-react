@@ -49,6 +49,7 @@ const Pagination = styled.div`
         border-radius: 5px;
         padding: 10px 20px;
         font-weight: bold;
+        cursor: pointer;
     }
 `
 const Main = styled.main`
@@ -57,8 +58,6 @@ const Main = styled.main`
     background-color: pink;
     margin: auto;
     padding-bottom: 30px;
-    
-
     
     .types {
         display: flex;
